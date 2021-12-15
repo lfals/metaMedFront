@@ -1,10 +1,11 @@
 
 import React from "react";
-import Header from "../../components/header/header.component";
+import {Header, Menu} from "../../components";
 
 const Manobras = () => {
     return ( 
         <>
+        <Menu />
         <Header />
         <h1>Manobras</h1>
         </>

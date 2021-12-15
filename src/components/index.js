@@ -1,4 +1,5 @@
-import Header from "./header/Header.component"
+import Header from "./header/header.component"
+import Menu from "./menu/menu.component"
 
 
-export default { Header }
+export { Header, Menu }
