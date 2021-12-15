@@ -10,7 +10,6 @@ ReactDOM.render(
    <BrowserRouter> 
     <Routes>
       <Route path="/" exact element={<Dashboard />} />
-
     </Routes>
    </BrowserRouter>
  
