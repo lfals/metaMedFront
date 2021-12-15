@@ -10,7 +10,7 @@ ReactDOM.render(
    <BrowserRouter> 
     <Routes>
       <Route path="/" exact element={<Dashboard />} />
-      <Route path="/manobras" element={<Manobras />} />
+      <Route path="/manobras"  element={<Manobras />} />
 
     </Routes>
    </BrowserRouter>
