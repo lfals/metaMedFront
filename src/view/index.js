@@ -1,7 +1,6 @@
 import Dashboard from './dashboard'
-import Menu from './menu'
+import Manobras from './manobras'
 
 export {
-    Dashboard,
-    Menu
+    Dashboard, Manobras
 }
