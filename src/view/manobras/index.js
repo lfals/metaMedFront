@@ -1,6 +1,6 @@
 
 import React from "react";
-import Header from "../../components/Header/Header.component";
+import Header from "../../components/header/header.component";
 
 const Manobras = () => {
     return ( 
