@@ -1,12 +1,11 @@
 
 import React from "react";
-import {Header, Menu} from "../../components";
+import {DesktopMenu, Header, MobileMenu} from "../../components";
 
 const Manobras = () => {
     return ( 
         <>
-        <Menu />
-        <Header />
+        <DesktopMenu />
         <h1>Manobras</h1>
         </>
         )

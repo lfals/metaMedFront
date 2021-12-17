@@ -14,23 +14,36 @@ const groups = [
 
 const pages = [
 {
-    "group": "utilidades",
-    "name":"Manobras",
-    "access": ["administrator","user", "colaborator"],
-    "route": "/utilidades"
-},
-{
     "group": "dashboard",
     "name":"Dashboard",
     "access": ["administrator","user", "colaborator"],
-    "route": "/dashboard"
+    "route": "/"
 
+},
+{
+    "group": "utilidades",
+    "name":"Manobras",
+    "access": ["administrator","user", "colaborator"],
+    "route": "/maneuvers"
+},
+{
+    "group": "utilidades",
+    "name":"Siglas",
+    "access": ["administrator","user", "colaborator"],
+    "route": "/acronyms"
 },
 {
     "group": "utilidades",
     "name":"Funções",
     "access": ["administrator","user", "colaborator"],
-    "route": "/funcoes"
+    "route": "/functions"
+
+},
+{
+    "group": "utilidades",
+    "name":"Usuários",
+    "access": ["administrator"],
+    "route": "/users"
 
 }
 ]

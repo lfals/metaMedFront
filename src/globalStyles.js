@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
  
 const GlobalStyle = createGlobalStyle`
+  #root{
+  display: flex;
+
+}
   body {
     margin: 0;
     padding: 0;

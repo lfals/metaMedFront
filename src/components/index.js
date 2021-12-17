@@ -1,5 +1,5 @@
 import Header from "./header/header.component"
-import Menu from "./menu/menu.component"
+import DesktopMenu from './menu/desktop.menu.component'
+import MobileMenu from './menu/mobile.menu.component'
 
-
-export { Header, Menu }
+export { Header, DesktopMenu, MobileMenu }

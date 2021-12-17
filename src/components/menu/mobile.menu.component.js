@@ -8,7 +8,7 @@ const user = {
 
 
 
-const Menu = () => {
+const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   
   const toggleDrawer = (status) => {
@@ -58,4 +58,4 @@ const Menu = () => {
     )
 }
 
-export default Menu
+export default MobileMenu
