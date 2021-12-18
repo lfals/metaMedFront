@@ -1,29 +1,30 @@
-import { Box, Button, Divider, Drawer, Link, List, ListItem,  ListItemIcon,  ListItemText, Toolbar } from "@material-ui/core";
-import React, { useState } from "react";
-import {pages, groups} from "../../controller/pages";
+import { List } from "@material-ui/core";
+import React from "react";
+import {pages} from "../../controller/pages";
+import { Box, Link, ListItemText } from "./style";
 
 const user = {
-  "role": "administrator"
+  "role": "user"
 }
-
 
 
 const DesktopMenu = () => {
 
- 
+  
+
     return(
 
       <div>
-        <Box
-          sx={{width: 300}}
-        >
+        <Box>
           <List>
             {pages.map(page => {
-             return(
-              <Link key={page.name} href={page.route}>
-              <ListItemText primary={page.name} />
-              </Link>
-             )
+              if(page.access.indexOf(user.role) > -1){
+                return(
+                  <Link key={page.name} href={page.route}>
+                  <ListItemText primary={page.name} />
+                  </Link>
+                 )
+              }
             })}
             
           </List>
