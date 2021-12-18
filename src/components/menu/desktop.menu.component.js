@@ -1,20 +1,31 @@
-import { List } from "@material-ui/core";
+import { Divider, List,  Tooltip,ListItemIcon, MenuItem  } from "@material-ui/core";
 import React from "react";
 import {pages} from "../../controller/pages";
-import { Box, Link, ListItemText } from "./style";
+import { Box, Link, ListItemText, MenuContainer, ProfileHolder, ProfileTextHolder, Avatar, Menu, PopupMenuText } from "./style";
+import { FiSettings } from 'react-icons/fi'
+import { Logout, PersonAdd, Settings } from "@mui/icons-material";
 
 const user = {
-  "role": "user"
+  "role": "administrator"
 }
 
 
 const DesktopMenu = () => {
 
-  
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleProfileOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
     return(
 
-      <div>
+      <MenuContainer>
         <Box>
           <List>
             {pages.map(page => {
@@ -29,7 +40,39 @@ const DesktopMenu = () => {
             
           </List>
         </Box>
-      </div>
+        <Tooltip title="Configuração de Conta">
+        <ProfileHolder onClick={handleProfileOpen}>
+          <ProfileTextHolder >
+            <h1>Luis Amorim</h1>
+              <FiSettings />
+          </ProfileTextHolder>
+        </ProfileHolder>
+        </Tooltip>
+        <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+      >
+        <PopupMenuText>
+          <h1>Luis Amorim</h1>
+          <p>Administrador</p>
+        </PopupMenuText>
+        <Divider />
+        <MenuItem>
+          <ListItemIcon>
+            <Settings fontSize="small" />
+          </ListItemIcon>
+          Settings
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Logout fontSize="small" />
+          </ListItemIcon>
+          Logout
+        </MenuItem>
+      </Menu>
+      </MenuContainer>
       
     
     )

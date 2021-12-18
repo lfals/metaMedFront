@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
  
 const GlobalStyle = createGlobalStyle`
 :root{
-  --main-bt-color: #357CE8;
+  --main-color: #357CE8;
 }
   #root{
   display: flex;
