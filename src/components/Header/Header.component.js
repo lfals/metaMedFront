@@ -1,23 +1,29 @@
+import { Breadcrumbs, Link, Typography } from "@material-ui/core";
 import React from "react";
-import { Container, ContainerManobras, ContainerDuplo, ContainerCadastradas, ContainerNumeros } from "./style"
+import { Container, ContainerTitle, QuantityContainer, ContainerCadastradas, ContainerNumeros } from "./style"
 const Header = (props) => {
 
     console.log(props);
     return (
         <Container>
-            <ContainerManobras>
+            <ContainerTitle>
                 <h1>{props.title}</h1>
-            </ContainerManobras>
+                <Breadcrumbs>
+                    <Link underline="hover" color="inherit" href="/">
+                        MetaMedi
+                    </Link>
+                    <Typography color="text.primary">{props.title}</Typography>
+                </Breadcrumbs>
+            </ContainerTitle>
 
-            <ContainerDuplo>
+            <QuantityContainer>
                 <ContainerCadastradas>
                     <h2>{props.title} <br />Cadastradas</h2>
                 </ContainerCadastradas>
                 <ContainerNumeros>
                     <h1>{props.amount}</h1>
                 </ContainerNumeros>
-            </ContainerDuplo>
-         
+            </QuantityContainer>
         </Container>
     );
 }

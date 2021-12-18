@@ -1,9 +1,9 @@
 import { Divider, List,  Tooltip,ListItemIcon, MenuItem  } from "@material-ui/core";
 import React from "react";
 import {pages} from "../../controller/pages";
-import { Box, Link, ListItemText, MenuContainer, ProfileHolder, ProfileTextHolder, Avatar, Menu, PopupMenuText } from "./style";
+import { Box, Link, ListItemText, MenuContainer, ProfileHolder, ProfileTextHolder, Avatar, Menu, PopupMenuText, CompanyLogo } from "./style";
 import { FiSettings } from 'react-icons/fi'
-import { Logout, PersonAdd, Settings } from "@mui/icons-material";
+import { Logout, Settings } from "@mui/icons-material";
 
 const user = {
   "role": "administrator"
@@ -28,6 +28,7 @@ const DesktopMenu = () => {
       <MenuContainer>
         <Box>
           <List>
+          <CompanyLogo>MetaMedi</CompanyLogo>
             {pages.map(page => {
               if(page.access.indexOf(user.role) > -1){
                 return(

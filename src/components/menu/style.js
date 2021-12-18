@@ -91,3 +91,7 @@ export const PopupMenuText = styled.div`
         font-size:16px
     }
 `
+
+export const CompanyLogo = styled.h1`
+    margin: 25px auto;
+`

@@ -1,12 +1,14 @@
 
 import React from "react";
 import {DesktopMenu, Header, MobileMenu} from "../../components";
+import { Container } from "./style";
 
 const Manobras = () => {
     return ( 
         <>
-                <DesktopMenu />
-                <h1>Manobras</h1>
+                <Container>
+                        <Header title="Manobras" amount="256"/>
+                </Container>
         </>
         )
    
