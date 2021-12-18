@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
  
 const GlobalStyle = createGlobalStyle`
+:root{
+  --main-bt-color: #357CE8;
+}
   #root{
   display: flex;
 
@@ -10,8 +13,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: Montserrat;
   }
-  h1,h2,h3,h4,h5,h6{
+  h1,h2,h3,h4,h5,h6,a,p{
     margin: 0;
+   
 
   }
 `;

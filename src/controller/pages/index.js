@@ -1,12 +1,14 @@
 //listagen de páginas e permissão
 const groups = [
     {
-        "name":"dashboard",
+        "name": "Dashboard",
+        "group":"dashboard",
         "access": ["administrator"]
 
     },
     {
-        "name":"utilidades",
+        "name": "Utilidades",
+        "group":"utilidades",
         "access": ["administrator","user", "colaborator"]
     }
     
