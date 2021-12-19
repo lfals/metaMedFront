@@ -1,8 +1,8 @@
 
 import React from "react";
-import {AdminDashboard, DesktopMenu, Header, MobileMenu, Container} from "../../components";
+import {AdminDashboard, Header, Container} from "../../components";
 
-const Manobras = () => {
+const Maneuvers = () => {
     return ( 
         <>
                 <Container>
@@ -14,4 +14,4 @@ const Manobras = () => {
    
 }
 
-export default Manobras; 
+export default Maneuvers; 
