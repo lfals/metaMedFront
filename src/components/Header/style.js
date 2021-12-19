@@ -4,8 +4,7 @@ import styledComponents from "styled-components";
 
 export const Container = styled.div `
 
-    margin: 80px 150px;
-    width: 100%;
+    margin: 80px 0;
     height: 150px;
     display: flex;
     align-items: center;

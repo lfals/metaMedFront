@@ -1,13 +1,13 @@
 
 import React from "react";
-import {DesktopMenu, Header, MobileMenu} from "../../components";
-import { Container } from "./style";
+import {AdminDashboard, DesktopMenu, Header, MobileMenu, Container} from "../../components";
 
 const Manobras = () => {
     return ( 
         <>
                 <Container>
                         <Header title="Manobras" amount="256"/>
+                        <AdminDashboard title="Manobras"/>
                 </Container>
         </>
         )
