@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { DesktopMenu } from './components';
 import GlobalStyle from './globalStyles';
-import {Dashboard, Manobras} from "./view"
+import {Acronyms, Dashboard, Manobras} from "./view"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,6 +13,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" exact element={<Dashboard />} />
       <Route path="/maneuvers"  element={<Manobras />} />
+      <Route path="/acronyms"  element={<Acronyms />} />
 
     </Routes>
    </BrowserRouter>
