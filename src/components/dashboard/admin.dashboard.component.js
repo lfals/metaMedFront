@@ -1,10 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import react from 'react'
-import { Paper, Table, TableBody,  TableHead } from '@material-ui/core';
+import react, {useState}from 'react'
+import { Paper, Table, TableBody,  TableHead, Modal, Typography, Box, Fade } from '@material-ui/core';
 import { TableContainer, TableCell, TableRow } from './style';
 import { FiEdit } from 'react-icons/fi';
+import { UserAddModal } from '..';
 
 const AdminDashboard = (props) => {
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
     function createData(id, calories, fat, carbs, protein) {
         return { id, calories, fat, carbs, protein };
@@ -18,8 +23,10 @@ const AdminDashboard = (props) => {
         createData('5', 356, 16.0, 49, 3.9),
       ]
 
+      
 
     return(
+      <>
         <TableContainer component={Paper}>
         <Table  aria-label="simple table">
           <TableHead>
@@ -46,13 +53,24 @@ const AdminDashboard = (props) => {
                 <TableCell className='name' >{name}</TableCell>
                 <TableCell  className='description'>{description}</TableCell>
                 <TableCell>{row.carbs}</TableCell>
-                <TableCell className='editIcon'><FiEdit /></TableCell>
+                <TableCell className='editIcon'><FiEdit onClick={() =>setOpen(true) }/></TableCell>
               </TableRow>
               )
             })}
           </TableBody>
         </Table>
-      </TableContainer>
+        </TableContainer>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+        <Fade in={open}>
+          <UserAddModal/>
+        </Fade>
+        </Modal>
+      </>
     )
 }
 
