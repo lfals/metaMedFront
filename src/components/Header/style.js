@@ -4,25 +4,30 @@ import styledComponents from "styled-components";
 
 export const Container = styled.div `
 
-    margin: 80px 88px;
+    margin: 80px 0;
+    height: 150px;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
 
 `
 
-export const ContainerManobras = styled.div `
-
+export const ContainerTitle = styled.div `
+    font-size: 30px;
+    font-weight: 200;
 
 `
-export const ContainerDuplo = styled.div `
+export const QuantityContainer = styled.div `
 
     display: flex;
     justify-content: space-around;
+    align-items: center;
 `
 export const ContainerCadastradas = styled.div `
-    font-size: 18px;
-    text-align: center;
+    font-size: 16px;
+    text-align: right;
     margin-right: 10px;
+
 
 `
 
