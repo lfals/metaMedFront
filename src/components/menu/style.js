@@ -1,4 +1,7 @@
  import styled from "styled-components";
+ import React from "react";
+ import {Link as ReactLink} from 'react-router-dom'
+ 
 
  import { Box as MuiBox, Link as MuiLink,ListItemText as MuiListItemText, Avatar as MuiAvatar, Menu as MuiMenu } from "@material-ui/core";
 
@@ -9,7 +12,7 @@ export const Box = styled(MuiBox)`
 `
  
 
-export const Link = styled(MuiLink)`
+export const Link = styled(ReactLink)`
         text-decoration: none !important;
 
 `

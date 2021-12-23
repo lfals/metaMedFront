@@ -1,13 +1,15 @@
 
 import React from "react";
-import {AdminDashboard, Header, Container} from "../../components";
+import {AdminDashboard, Header, Container, UserDashboard, DesktopMenu} from "../../components";
 
 const Maneuvers = () => {
     return ( 
         <>
+                <DesktopMenu />
                 <Container>
                         <Header title="Manobras" amount="256"/>
-                        <AdminDashboard title="Manobras"/>
+                        {/* <AdminDashboard title="Manobras"/> */}
+                        <UserDashboard/>
                 </Container>
         </>
         )
