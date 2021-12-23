@@ -1,9 +1,8 @@
 import { Breadcrumbs, Link, Typography } from "@material-ui/core";
 import React from "react";
 import { Container, ContainerTitle, QuantityContainer, ContainerCadastradas, ContainerNumeros } from "./style"
-const Header = (props) => {
+const header = (props) => {
 
-    console.log(props);
     return (
         <Container>
             <ContainerTitle>
@@ -28,4 +27,4 @@ const Header = (props) => {
     );
 }
 
-export default Header;
+export default header;
