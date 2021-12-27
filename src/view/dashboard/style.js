@@ -1,15 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Container = styled.div`
-    
-    display:flex;
-    background: #E3F2FD;
-    border-radius: 12px;
-    padding: 32px;
-    width: auto;
-    height: 80vh;
-    
+import { Container as CContainer } from "../../components";
+
+export const Container = styled(CContainer)`
+    flex-direction: row ;
+   
 `
 
 export const Paper = styled.div `
