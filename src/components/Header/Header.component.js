@@ -1,9 +1,10 @@
-import { Breadcrumbs, Link, Typography } from "@material-ui/core";
+import { Breadcrumbs, Divider, Link, Typography } from "@material-ui/core";
 import React from "react";
 import { Container, ContainerTitle, QuantityContainer, ContainerCadastradas, ContainerNumeros } from "./style"
 const header = (props) => {
 
     return (
+        <>
         <Container>
             <ContainerTitle>
                 <h1>{props.title}</h1>
@@ -23,7 +24,10 @@ const header = (props) => {
                     <h1>{props.amount}</h1>
                 </ContainerNumeros>
             </QuantityContainer>
+            
         </Container>
+           
+         </>
     );
 }
 
