@@ -1,14 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Container as CContainer } from "../../components"
 
-export const Container = styled.div`
+export const Container = styled(CContainer)`
     
-    display:flex;
-    background: #E3F2FD;
-    border-radius: 12px;
-    padding: 32px;
-    width: auto;
-    height: 80vh;
+    flex-direction: row;
     
 `
 
@@ -40,3 +36,4 @@ export const CardContent = styled.h1 `
 
 
 `
+

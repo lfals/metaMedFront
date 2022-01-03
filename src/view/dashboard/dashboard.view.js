@@ -1,6 +1,7 @@
 
 import React from "react";
-import {CardContent, CardTitle, Container, Paper } from "./style";
+import {CardContent, Container, CardTitle, Paper } from "./style";
+
 
 const Dashboard = () => {
     return ( 
