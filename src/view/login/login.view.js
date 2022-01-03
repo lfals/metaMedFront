@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Divider, FormControl, Grid, TextField } from "@material-ui/core";
-import { Container, Box, ButtonGoogle, ButtonLogin} from "./style";
+import { Link, Checkbox, FormControlLabel, TextField } from "@material-ui/core";
+import { Container, FormGroup, Box, ButtonGoogle, ButtonLogin} from "./style";
 import { FcGoogle } from 'react-icons/fc'
 
 
@@ -24,12 +24,17 @@ const Login = () => {
                 <Box sx={style}>    
                     <h1>Bem vindo de volta!</h1>
                     <p>Faça login para continuar</p>
-                    <ButtonGoogle><FcGoogle />Login com Google</ButtonGoogle>
+                    <ButtonGoogle fullWidth><FcGoogle />Login com Google</ButtonGoogle>
                    
                     <TextField fullWidth id="email" label="Email" variant="outlined" margin="normal" />
 
                     <TextField fullWidth id="password-" label="Senha" type="password" variant="outlined" margin="normal" />
-                    
+                    <FormGroup>
+                        <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+                        <Link href="#" underline="always">
+                            {'Esqueceu a senha?'}
+                        </Link>
+                    </FormGroup>
                     <ButtonLogin fullWidth >Login</ButtonLogin>
                 </Box>
             </Container>
