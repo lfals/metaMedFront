@@ -1,14 +1,13 @@
 import { Box } from "@material-ui/core";
 import React, { useEffect, useRef, useState } from 'react'
 import { useField } from '@unform/core'
-import { Input } from "../../index"
+import { Header, Input } from "../../index"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { Form, TextField } from './style.js'
 
-
+import { Form, TextField, Button, Stack } from './style.js'
 
 
 
@@ -48,19 +47,25 @@ const UserAddModal = () => {
 
   return (
     <Box sx={style}>
-      <Form onSubmit={handleSubmit}>
+      
+      <h1 >Adicionar</h1>
+      
+        
 
-        <TextField sx={{mb:2}} label="Nome Completo" />
-        <TextField sx={{mb:2}} label="Email"  />
-        <TextField sx={{mb:2}} label="Senha"  />
+      
+      <Form  onSubmit={handleSubmit}>
+
+        <TextField sx={{mb:2, mt:4}} label="Nome Completo" type="name" />
+        <TextField sx={{mb:2}} label="Email" type="email" />
+        <TextField sx={{mb:2}} label="Senha"  type="password"  />
 
         <FormControl>
-          <InputLabel id="demo-simple-select-label">role</InputLabel>
+          <InputLabel id="demo-simple-select-label">Tipo de Acesso</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={role}
-            label="Role"
+            label="Tipo de Acesso"
             onChange={handleChange}
           >
             <MenuItem value={"administrador"}>Administrador</MenuItem>
@@ -69,8 +74,14 @@ const UserAddModal = () => {
           </Select>
         </FormControl>
 
+       
       </Form>
+      <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
 
+        <Button variant="text">Cancelar</Button>
+        <Button variant="contained">Adicionar</Button>
+       
+      </Stack>
     </Box>
   )
 }
