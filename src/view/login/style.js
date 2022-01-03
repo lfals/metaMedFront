@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-import {Container as CContainer} from '../../components'
-import {Box as MuiBox} from '@material-ui/core'
-
+import { Container as CContainer } from '../../components'
+import { Box as MuiBox , Button as MuiButton, TextField as MuiTextField} from '@material-ui/core'
 
 export const Container = styled(CContainer)`
 
 `
+
+
 
 export const Box = styled(MuiBox)`
 
@@ -20,25 +21,28 @@ export const Box = styled(MuiBox)`
     justify-content: center;
     align-items: center;
 
-    form{
-        display: flex;
-        flex-direction: column;
-
-        button{
-        width: 90%;
-        height: 50px;
-        background-color: #F3F3F3;
-    }
     
-    }
-    p{
-        margin-bottom: 30px;
-    }
+    
+    
     button{
-        width: 90%;
         height: 50px;
-        background-color: #F3F3F3;
+        border-radius: 12px;
+        margin-bottom: 24px;
+        margin-top: 24px;
+
     }
 
    
+`
+
+export const ButtonLogin = styled(MuiButton) `
+        background: #357CE8 !important;
+        color: #FFFFFF !important;
+        border-radius: 12px;
+
+`
+
+export const ButtonGoogle = styled(MuiButton) `
+       border-radius: 12px;
+
 `
