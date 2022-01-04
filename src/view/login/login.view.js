@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, FormControlLabel, TextField } from "@material-ui/core";
+import { Link, FormControlLabel, Divider, TextField } from "@material-ui/core";
 import { Container, FormGroup, Box, Checkbox, ButtonGoogle, ButtonLogin} from "./style";
 import { FcGoogle } from 'react-icons/fc'
 
@@ -30,7 +30,7 @@ const Login = () => {
 
                     <TextField fullWidth id="password-" label="Senha" type="password" variant="outlined" margin="normal" />
                     <FormGroup fullWidth>
-                        <FormControlLabel control={<Checkbox defaultChecked />} color="secondary" label="Lembrar" />
+                        <FormControlLabel control={<Checkbox defaultChecked color="primary" />}  label="Lembrar" />
                         <Link href="#" underline="always">
                             {'Esqueceu a senha?'}
                         </Link>

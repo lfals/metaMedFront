@@ -20,8 +20,8 @@ export const Box = styled(MuiBox)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    
+    border-radius: 12px;
+   
     
     
     button{
