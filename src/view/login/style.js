@@ -4,24 +4,24 @@ import { Container as CContainer } from '../../components'
 import { Box as MuiBox , Button as MuiButton, TextField as MuiTextField, FormGroup as MuiFormGroup, Checkbox as MuiCheckbox,} from '@material-ui/core'
 
 export const Container = styled(CContainer)`
-
+    
 `
 
 
 
 export const Box = styled(MuiBox)`
 
-    padding: 94px 0 100px 0;
+    padding: 32px;
     margin: auto;
-    width: 500px;
+    width: 475px;
     max-height: 90vh;
     background-color: white;
-    display: flex;
-    flex-direction: column;
+    
     justify-content: center;
-    align-items: center;
     border-radius: 12px;
+    text-align: center;
    
+  
     
     
     button{
