@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Container as CContainer } from '../../components'
-import { Box as MuiBox , Button as MuiButton, TextField as MuiTextField, FormGroup as MuiFormGroup} from '@material-ui/core'
+import { Box as MuiBox , Button as MuiButton, TextField as MuiTextField, FormGroup as MuiFormGroup, Checkbox as MuiCheckbox,} from '@material-ui/core'
 
 export const Container = styled(CContainer)`
 
@@ -31,7 +31,6 @@ export const Box = styled(MuiBox)`
 
     }
 
-   
 `
 
 export const ButtonLogin = styled(MuiButton) `
@@ -58,7 +57,14 @@ export const FormGroup = styled(MuiFormGroup) `
    
     display: flex;
     align-items: center ;
+    justify-content: space-between;
     flex-direction: row !important;
+    width: 100%;
+
+`
+export const Checkbox = styled(MuiCheckbox) `
+ 
 
 
 `
+
