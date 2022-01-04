@@ -1,10 +1,13 @@
 
 import React from "react";
-import {CardContent, Container, CardTitle, Paper } from "./style";
 
+import { DesktopMenu } from "../../components";
+import {CardContent, CardTitle, Container, Paper } from "./style";
 
 const Dashboard = () => {
     return ( 
+        <>
+        <DesktopMenu />
         <Container>
         
            
@@ -26,7 +29,7 @@ const Dashboard = () => {
             </Paper >
             
         </Container>
-       
+        </>
         )
    
 }

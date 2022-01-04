@@ -3,10 +3,8 @@ import styled from "styled-components";
 import { Container as CContainer } from "../../components"
 
 export const Container = styled(CContainer)`
-    
-    flex-direction: row;
-    
-`
+    flex-direction: row ;
+
 
 export const Paper = styled.div `
 

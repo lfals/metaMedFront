@@ -1,12 +1,17 @@
 import react from 'react'
-import { AdminDashboard, Container, Header } from '../../components'
+import { AdminDashboard, Container, DesktopMenu, Header, UserDashboard } from '../../components'
 
 const Acronyms = () => {
     return(
+        <>
+        <DesktopMenu />
         <Container>
             <Header title="Siglas" amount="256"/>
-            <AdminDashboard title="Siglas" />
+            <UserDashboard />
+            {/* <AdminDashboard title="Siglas" /> */}
         </Container>
+        </>
+       
     )
 }
 

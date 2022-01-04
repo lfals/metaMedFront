@@ -32,8 +32,8 @@ const DesktopMenu = () => {
             {pages.map(page => {
               if(page.access.indexOf(user.role) > -1){
                 return(
-                  <Link key={page.name} href={page.route}>
-                  <ListItemText primary={page.name} />
+                  <Link key={page.name} to={page.route}>
+                    <ListItemText primary={page.name} />
                   </Link>
                  )
               }
