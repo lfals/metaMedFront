@@ -1,6 +1,6 @@
 
 import React from "react";
-import {AdminDashboard, Header, Container, DesktopMenu} from "../../components";
+import {AdminDashboard, UserDashboardAdd, Header, Container, DesktopMenu} from "../../components";
 
 const Users = () => {
     return ( 
@@ -8,7 +8,7 @@ const Users = () => {
                 <DesktopMenu />
                 <Container>
                         <Header title="Usuários" amount="256"/>
-                        <AdminDashboard title="Usuários"/>
+                        <UserDashboardAdd title="Usuários"/>
                 </Container>
         </>
         )

@@ -82,3 +82,5 @@ export const CardsContainer = styled.div`
     overflow-y: auto;
     padding-right: 20px;
 `
+
+
