@@ -3,7 +3,7 @@ import react, {useState}from 'react'
 import { Paper, Table, TableBody,  TableHead, Modal, Typography, Box, Fade } from '@material-ui/core';
 import { TableContainer, TableCell, TableRow } from './style';
 import { FiEdit } from 'react-icons/fi';
-import { UserAddModal } from '..';
+import { UserAddModal, AcronymsModalEdit } from '..';
 
 const AcronymsDashboard = (props) => {
 
@@ -67,7 +67,7 @@ const AcronymsDashboard = (props) => {
           aria-describedby="modal-modal-description"
         >
         <Fade in={open}>
-          <UserAddModal/>
+          <AcronymsModalEdit/>
         </Fade>
         </Modal>
       </>

@@ -3,9 +3,9 @@ import react, {useState}from 'react'
 import { Paper, Table, TableBody,  TableHead, Modal, Typography, Box, Fade } from '@material-ui/core';
 import { TableContainer, TableCell, TableRow } from './style';
 import { FiEdit } from 'react-icons/fi';
-import { UserEditModal } from '..';
+import { ManeuversEditModal } from '..';
 
-const AdminDashboard = (props) => {
+const ManeuversDashboard = (props) => {
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -32,7 +32,7 @@ const AdminDashboard = (props) => {
           <TableHead>
             <TableRow>
               <TableCell className='id'>id</TableCell>
-              <TableCell >{props.title}</TableCell>
+              <TableCell >Manobras</TableCell>
               <TableCell >Descrição</TableCell>
               <TableCell>Adicionado em</TableCell>
               <TableCell></TableCell>
@@ -67,11 +67,11 @@ const AdminDashboard = (props) => {
           aria-describedby="modal-modal-description"
         >
         <Fade in={open}>
-          <UserEditModal/>
+          <ManeuversEditModal/>
         </Fade>
         </Modal>
       </>
     )
 }
 
-export default AdminDashboard
+export default ManeuversDashboard
