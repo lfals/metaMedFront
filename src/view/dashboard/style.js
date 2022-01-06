@@ -4,7 +4,8 @@ import { Container as CContainer } from "../../components"
 
 export const Container = styled(CContainer)`
     flex-direction: row ;
-
+    
+`
 
 export const Paper = styled.div `
 
