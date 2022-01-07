@@ -29,7 +29,7 @@ const style = {
 
 
 
-const AcronymsEditModal = () => {
+const AcronymsAddModal = () => {
   const [language, setLanguage] = useState('');
 
   const handleChange = (event) => {
@@ -52,7 +52,7 @@ const AcronymsEditModal = () => {
   return (
     <Box sx={style}>
       
-      <h1 >Editar</h1>
+      <h1 >Adicionar</h1>
       
         
 
@@ -96,7 +96,7 @@ const AcronymsEditModal = () => {
       </Form>
       <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
 
-        <Button variant="text">Excluir</Button>
+        <Button variant="text">Cancelar</Button>
         <Button variant="contained">Salvar</Button>
        
       </Stack>
@@ -104,4 +104,4 @@ const AcronymsEditModal = () => {
   )
 }
 
-export default AcronymsEditModal
+export default AcronymsAddModal

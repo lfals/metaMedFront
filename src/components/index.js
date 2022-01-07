@@ -10,10 +10,11 @@ import ManeuversEditModal from './modals/maneuvers/maneuversEdit.modal.component
 import Container from './container/container.component'
 import UserAddModal from "./modals/user/user.modal.component"
 import UserEditModal from "./modals/user/userEdit.modal.component"
-import AcronymsModalEdit from "./modals/acronyms/acronymsEdit.modal.component"
+import AcronymsEditModal from "./modals/acronyms/acronymsEdit.modal.component"
+import AcronymsAddModal from './modals/acronyms/acronymsAdd.modal.component'
 import Login from "./login/login.component"
 import Register from "./login/register.component"
 
 
 
-export { Header, ManeuversEditModal, DesktopMenu, MobileMenu, AdminDashboard, Container, AcronymsModalEdit, UserAddModal, UserEditModal, Register, Login, UserDashboardAdd, UserDashboard, ManeuversDashboard, AcronymsDashboard }
+export { Header, ManeuversEditModal, DesktopMenu, MobileMenu, AdminDashboard, Container, AcronymsEditModal, AcronymsAddModal, UserAddModal, UserEditModal, Register, Login, UserDashboardAdd, UserDashboard, ManeuversDashboard, AcronymsDashboard }
