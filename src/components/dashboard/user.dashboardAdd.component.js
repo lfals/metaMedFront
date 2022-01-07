@@ -1,8 +1,6 @@
 import { Box, Container, Modal } from "@material-ui/core";
 import React, { useState } from "react";
 import { UserAddModal } from '../../components/index'
-import { FiImage, FiArrowRight } from 'react-icons/fi'
-import { TextContainer, Card, ImageContainer, CardParagraphTitle, CardTitle, CardsContainer } from "./style";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -11,7 +9,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
-
+import { IoMdAddCircleOutline } from 'react-icons/io'
 
 
 
@@ -22,7 +20,6 @@ import Button from '@mui/material/Button';
     transform: 'translate(-50%, -50%)',
     width: 1200,
     height: 600,
-    bgcolor: 'background.paper',
     border: 'none',
     borderRadius: 12,
     
@@ -75,7 +72,10 @@ const UserDashboardAdd = () => {
         </TableBody>
       </Table>
     </TableContainer>
-    <Button variant="contained" addIcon={<addIcon />} onClick={handleOpen}>Adicionar</Button>
+    <div > 
+      <Button variant="contained" onClick={handleOpen}>Adicionar <IoMdAddCircleOutline /> </Button>
+    </div>
+   
 
         </Box>
 

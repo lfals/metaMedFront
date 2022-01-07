@@ -29,14 +29,14 @@ const style = {
 
 
 
-const UserAddModal = () => {
-  const [role, setAge] = useState('');
-
+const ManeuversEditModal = () => {
  
-  
-    const handleChange = (event) => {
-      setAge(event.target.value);
-    };
+
+  const [status, setStatus] = useState('');
+
+  const handleChangeStatus = (event) => {
+        setStatus(event.target.value);
+  };
   
 
   function handleSubmit(data) {
@@ -48,28 +48,32 @@ const UserAddModal = () => {
   return (
     <Box sx={style}>
       
-      <h1 >Adicionar</h1>
+      <h1 >Editar</h1>
       
         
 
       
       <Form  onSubmit={handleSubmit}>
 
-        <TextField sx={{mb:2, mt:4}} label="Nome Completo" type="name" />
-        <TextField sx={{mb:2}} label="Email" type="email" />
-        <TextField sx={{mb:2}} label="Senha"  type="password"  />
+        <TextField sx={{mb:2, mt:4}} label="Nome" type="text" />
+        <TextField sx={{mb:2}} label="Descrição" type="text" />
+        <TextField sx={{mb:2}} label="Aplicabilidade" type="text" />
+        <TextField sx={{mb:2}} label="Se positivo" type="text" />
+        <TextField sx={{mb:2}} label="Se negativo" type="text" />
+        <TextField sx={{mb:2}}  label="Quem foi que deu o nome a esta manobra?" type="text" />
+        
 
         <FormControl>
-          <InputLabel id="demo-simple-select-label">Tipo de Acesso</InputLabel>
+          <InputLabel id="demo-simple-select-label">Status</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={role}
-            label="Tipo de Acesso"
-            onChange={handleChange}
+            value={status}
+            label="Status"
+            onChange={handleChangeStatus}
           >
-            <MenuItem value={"administrador"}>Administrador</MenuItem>
-            <MenuItem value={"usuario"}>Usuário</MenuItem>
+              <MenuItem value={"ativo"}>Ativo</MenuItem>
+            <MenuItem value={"desativado"}>Desativado</MenuItem>
           
           </Select>
         </FormControl>
@@ -78,12 +82,12 @@ const UserAddModal = () => {
       </Form>
       <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
 
-        <Button variant="text">Cancelar</Button>
-        <Button variant="contained">Adicionar</Button>
+        <Button variant="text">Excluir</Button>
+        <Button variant="contained">Salvar</Button>
        
       </Stack>
     </Box>
   )
 }
 
-export default UserAddModal
+export default ManeuversEditModal

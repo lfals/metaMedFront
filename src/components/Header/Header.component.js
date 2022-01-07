@@ -1,7 +1,7 @@
 import { Breadcrumbs, Divider, Link, Typography } from "@material-ui/core";
 import React from "react";
 import { Container, ContainerTitle, QuantityContainer, ContainerCadastradas, ContainerNumeros } from "./style"
-const header = (props) => {
+const Header = (props) => {
 
     return (
         <>
@@ -31,4 +31,4 @@ const header = (props) => {
     );
 }
 
-export default header;
+export default Header;

@@ -3,9 +3,9 @@ import react, {useState}from 'react'
 import { Paper, Table, TableBody,  TableHead, Modal, Typography, Box, Fade } from '@material-ui/core';
 import { TableContainer, TableCell, TableRow } from './style';
 import { FiEdit } from 'react-icons/fi';
-import { UserEditModal } from '..';
+import { UserAddModal, AcronymsModalEdit } from '..';
 
-const AdminDashboard = (props) => {
+const AcronymsDashboard = (props) => {
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -67,11 +67,11 @@ const AdminDashboard = (props) => {
           aria-describedby="modal-modal-description"
         >
         <Fade in={open}>
-          <UserEditModal/>
+          <AcronymsModalEdit/>
         </Fade>
         </Modal>
       </>
     )
 }
 
-export default AdminDashboard
+export default AcronymsDashboard
