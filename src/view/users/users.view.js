@@ -8,7 +8,7 @@ const Users = () => {
                 <DesktopMenu />
                 <Container>
                         <Header title="Usuários" amount="256"/>
-                        <AdminDashboard title="Usuários"/>
+                        <UserDashboardAdd title="Usuários"/>
                 </Container>
         </>
         )

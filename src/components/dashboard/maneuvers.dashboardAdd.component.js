@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import { IoMdAddCircleOutline } from 'react-icons/io'
 
 
-
   const StyleBoxContainer = {
     position: 'Relative',
     top: '30%',
@@ -27,12 +26,11 @@ import { IoMdAddCircleOutline } from 'react-icons/io'
     
     margin: 'auto'
    
-   
   };
 
 
 
-const AcronymsDashboardAdd = () => {
+const ManeuversDashboardAdd = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -63,4 +61,4 @@ const AcronymsDashboardAdd = () => {
 
 }
 
-export default AcronymsDashboardAdd
+export default ManeuversDashboardAdd

@@ -3,7 +3,7 @@ import react, {useState}from 'react'
 import { Paper, Table, TableBody,  TableHead, Modal, Typography, Box, Fade } from '@material-ui/core';
 import { TableContainer, TableCell, TableRow } from './style';
 import { FiEdit } from 'react-icons/fi';
-import { ManeuversEditModal } from '..';
+import { ManeuversEditModal, ManeuversAddModal } from '..';
 
 const ManeuversDashboard = (props) => {
 
@@ -67,7 +67,7 @@ const ManeuversDashboard = (props) => {
           aria-describedby="modal-modal-description"
         >
         <Fade in={open}>
-          <ManeuversEditModal/>
+          <ManeuversAddModal/>
         </Fade>
         </Modal>
       </>

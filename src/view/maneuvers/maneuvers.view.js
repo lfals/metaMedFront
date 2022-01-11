@@ -1,6 +1,6 @@
 
 import React from "react";
-import {ManeuversDashboard, Header, Container, UserDashboard, DesktopMenu} from "../../components";
+import {ManeuversDashboard, ManeuversDashboardAdd, Header, Container, UserDashboard, DesktopMenu} from "../../components";
 
 const Maneuvers = () => {
     return ( 
@@ -9,7 +9,7 @@ const Maneuvers = () => {
                 <Container>
                         <Header title="Manobras" amount="256"/>
                         {/* <AdminDashboard title="Manobras"/> */}
-                        <ManeuversDashboard/>
+                        <ManeuversDashboardAdd/>
                 </Container>
         </>
         )
