@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { useField } from '@unform/core'
+import { TextField } from '@mui/material'
 
-export default function Input({ name, ...rest }) {
+
+const Input = ({ name, ...rest }) => {
+
   const inputRef = useRef(null)
   const { fieldName, defaultValue, registerField, error } = useField(name)
 
@@ -10,6 +13,7 @@ export default function Input({ name, ...rest }) {
       name: fieldName,
       ref: inputRef,
       getValue: ref => {
+        console.log("ref",ref.current.value);
         return ref.current.value
       },
       setValue: (ref, value) => {
@@ -21,5 +25,7 @@ export default function Input({ name, ...rest }) {
     })
   }, [fieldName, registerField])
 
-  return <input ref={inputRef} defaultValue={defaultValue} {...rest} />
+  return <TextField ref={inputRef} defaultValue={defaultValue} {...rest} />
 }
+
+export default Input

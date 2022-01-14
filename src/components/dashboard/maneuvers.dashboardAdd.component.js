@@ -1,6 +1,6 @@
 import { Box, Container, Modal } from "@material-ui/core";
 import React, { useState } from "react";
-import { UserAddModal } from '../../components/index'
+import { ManeuversAddModal } from '../../components/index'
 import Button from '@mui/material/Button';
 import { IoMdAddCircleOutline } from 'react-icons/io'
 
@@ -54,7 +54,7 @@ const ManeuversDashboardAdd = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <UserAddModal />
+        <ManeuversAddModal />
       </Modal>
         </>
     )

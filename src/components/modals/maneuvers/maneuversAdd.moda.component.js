@@ -4,18 +4,19 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
 
 
 import { Form, TextField, Button, Stack } from '../style.js'
 
-const Input = styled('input')({
-    display: 'none',
-});
-
-
+const styleInput = {
+    border: "1px dashed rgba(0, 0, 0, 0.87)",
+    width: "100%",
+    height: 100,
+    borderRadius: 12,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}
 
 const style = {
     display: 'flex',
@@ -36,20 +37,43 @@ const style = {
 
 const ManeuversEditModal = () => {
 
+    const [isActive, setIsActive] = useState('');
+    const [image, setImage] = useState('');
 
-    const [status, setStatus] = useState('');
+
+    const formRef = useRef()
 
     const handleChangeStatus = (event) => {
-        setStatus(event.target.value);
+        setIsActive(event.target.value);
+    };
+
+    const handleImageChange = (e) => {
+            console.log(e);
+            let img = e.target.files[0];
+            let blobUrl = URL.createObjectURL(img)
+            console.log(blobUrl);
+            setImage(blobUrl)
     };
 
 
-    function handleSubmit(data) {
-        console.log(data)
+    const handleFormSubmit = (e) => {
+        e.preventDefault()
+        const {name, description, aplicability, ifPositive, ifNegative, who } = e.target.elements
+        console.log(
+            {
+                username: name.value, 
+                description: description.value, 
+                aplicability: aplicability.value, 
+                ifPositive: ifPositive.value, 
+                ifNegative: ifNegative.value, 
+                who: who.value, 
+                image: image,
+                isActive: isActive
+                
 
-    }
-
-
+            }
+            )
+      }
     return (
         <Box sx={style}>
 
@@ -57,49 +81,47 @@ const ManeuversEditModal = () => {
 
 
 
-
-            <Form onSubmit={handleSubmit}>
+            <Form ref={formRef} onSubmit={handleFormSubmit}>
 
                 <Stack direction="column" alignItems="center" spacing={2}>
-                    <label htmlFor="contained-button-file">
-                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
-                        <Button variant="contained" component="span">
+                    <label htmlFor="contained-button-file" style={styleInput}>
+                        <TextField accept="image/png,image/gif,image/jpeg" id="image" multiple type="file" name="file" onChange={handleImageChange}/>
+                        <addImageButton variant="contained" component="span">
                             Adicionar Imagem
-                        </Button>
+                        </addImageButton>
                     </label>
                    
                 </Stack>
-                <TextField sx={{ mb: 2, mt: 4 }} label="Nome" type="text" />
-                <TextField sx={{ mb: 2 }} label="Descrição" type="text" />
-                <TextField sx={{ mb: 2 }} label="Aplicabilidade" type="text" />
-                <TextField sx={{ mb: 2 }} label="Se positivo" type="text" />
-                <TextField sx={{ mb: 2 }} label="Se negativo" type="text" />
-                <TextField sx={{ mb: 2 }} label="Quem foi que deu o nome a esta manobra?" type="text" />
+                <TextField sx={{ mb: 2, mt: 4 }} id="name" label="Nome" v />
+                <TextField sx={{ mb: 2 }} id="description" label="Descrição" type="text" />
+                <TextField sx={{ mb: 2 }} id="aplicability" label="Aplicabilidade" type="text" />
+                <TextField sx={{ mb: 2 }} id="ifPositive" label="Se positivo" type="text" />
+                <TextField sx={{ mb: 2 }} id="ifNegative" label="Se negativo" type="text" />
+                <TextField sx={{ mb: 2 }} id="who" label="Quem foi que deu o nome a esta manobra?" type="text" />
 
 
-                <FormControl>
+                <FormControl id="isActive">
                     <InputLabel id="demo-simple-select-label">Status</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={status}
+                        id="isActive"
+                        value={isActive}
                         label="Status"
                         onChange={handleChangeStatus}
                     >
-                        <MenuItem value={"ativo"}>Ativo</MenuItem>
-                        <MenuItem value={"desativado"}>Desativado</MenuItem>
+                        <MenuItem name="active" id="active" value={true}>Ativo</MenuItem>
+                        <MenuItem name="inactive" id="inactive" value={false}>Desativado</MenuItem>
 
                     </Select>
                 </FormControl>
 
+                <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
 
-            </Form>
-            <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
-
-                <Button variant="text">Excluir</Button>
-                <Button variant="contained">Salvar</Button>
-
-            </Stack>
+                <Button variant="text" >Excluir</Button>
+                <Button variant="contained" type="submit">Salvar</Button>
+                </Stack>
+         </Form>
+           
         </Box>
     )
 }

@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { Form  as WebForm} from "@unform/web";
 import { TextField as MuiTextField, Button as MuiButton, Stack as MuiStack } from '@mui/material';
 
-export const Form = styled(WebForm)`
+export const Form = styled.form`
 
     display: flex;
     flex-direction: column ;
@@ -20,10 +19,16 @@ export const Button = styled(MuiButton) `
 
     
 `
+
+export const addImageButton = styled(MuiButton)`
+    border: 1px solid #000;
+    width: 80%;
+
+`
 export const Stack = styled(MuiStack) `
 
     margin-top: 84px;
-    justify-content: space-between
+    justify-content: space-between;
 
 
 `
