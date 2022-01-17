@@ -7,6 +7,7 @@ import Select from '@mui/material/Select';
 
 
 import { Form, TextField, Button, Stack } from '../style.js'
+import { addToDatabase, getFromDatabase } from "../../../controller/api/api.controller.js";
 
 const styleInput = {
     border: "1px dashed rgba(0, 0, 0, 0.87)",
@@ -56,24 +57,29 @@ const ManeuversEditModal = () => {
     };
 
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault()
         const {name, description, aplicability, ifPositive, ifNegative, who } = e.target.elements
-        console.log(
-            {
-                username: name.value, 
-                description: description.value, 
-                aplicability: aplicability.value, 
-                ifPositive: ifPositive.value, 
-                ifNegative: ifNegative.value, 
-                who: who.value, 
-                image: image,
-                isActive: isActive
-                
+        const data =  {
+            name: name.value, 
+            description: description.value, 
+            applicability: aplicability.value, 
+            ifPositive: ifPositive.value, 
+            ifNegative: ifNegative.value, 
+            whoCreated: who.value, 
+            image: image,
+            isActive: isActive
+            
 
-            }
-            )
+        }
+   
+
+        console.log(data);
+            addToDatabase("maneuver", data)
+        //    const response = await getFromDatabase("user")
+        //    console.log(response);
       }
+
     return (
         <Box sx={style}>
 
