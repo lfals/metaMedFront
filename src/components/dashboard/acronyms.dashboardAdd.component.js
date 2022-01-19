@@ -11,64 +11,65 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import { IoMdAddCircleOutline } from 'react-icons/io'
 import { Block } from "@mui/icons-material";
+import AcronymsAddModal from "../modals/acronyms/acronymsAdd.modal.component";
 
 
 
-  const StyleBoxContainer = {
-    position: 'Relative',
-    top: '30%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 1200,
-    height: 600,
-    bgcolor: 'background.paper',
-    border: 'none',
-    borderRadius: 12,
-    display: 'flex',
-    justifyContent: 'center',
-    
-    p: 4,
-  };
+const StyleBoxContainer = {
+  position: 'Relative',
+  top: '30%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 1200,
+  height: 600,
+  bgcolor: 'background.paper',
+  border: 'none',
+  borderRadius: 12,
+  display: 'flex',
+  justifyContent: 'center',
+
+  p: 4,
+};
 
 
-  const StyleButton = {
-    
-    margin: 'auto'
-    
-    
-   
-  };
+const StyleButton = {
+
+  margin: 'auto'
+
+
+
+};
 
 
 
 const AcronymsDashboardAdd = () => {
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-    return (
-        <>
-        
-        <Box sx={StyleBoxContainer}>
+  return (
+    <>
 
-        
-        
-        <Button sx={StyleButton} variant="contained" onClick={handleOpen}>Adicionar <IoMdAddCircleOutline  /> </Button>
+      <Box sx={StyleBoxContainer}>
 
-        </Box>
 
-        
-        
-        <Modal
+
+        <Button sx={StyleButton} variant="contained" onClick={handleOpen}>Adicionar <IoMdAddCircleOutline /> </Button>
+
+      </Box>
+
+
+
+      <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <UserAddModal />
+        <AcronymsAddModal />
       </Modal>
-        </>
-    )
+    </>
+  )
 
 }
 
