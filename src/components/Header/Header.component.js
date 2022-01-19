@@ -6,29 +6,29 @@ const Header = (props) => {
 
     return (
         <>
-        <Container>
-            <ContainerTitle>
-                <h1>{props.title}</h1>
-                <Breadcrumbs>
-                    <Link underline="hover" color="inherit" href="/">
-                        MetaMedi
-                    </Link>
-                    <Typography color="text.primary">{props.title}</Typography>
-                </Breadcrumbs>
-            </ContainerTitle>
+            <Container>
+                <ContainerTitle>
+                    <h1>{props.title}</h1>
+                    <Breadcrumbs>
+                        <Link underline="hover" color="inherit" href="/">
+                            MetaMed
+                        </Link>
+                        <Typography color="text.primary">{props.title}</Typography>
+                    </Breadcrumbs>
+                </ContainerTitle>
 
-            <QuantityContainer>
-                <ContainerCadastradas>
-                    <h2>{props.title} <br />Cadastradas</h2>
-                </ContainerCadastradas>
-                <ContainerNumeros>
-                    <h1>{props.amount}</h1>
-                </ContainerNumeros>
-            </QuantityContainer>
-            
-        </Container>
-           
-         </>
+                <QuantityContainer>
+                    <ContainerCadastradas>
+                        <h2>{props.title} <br />Cadastradas</h2>
+                    </ContainerCadastradas>
+                    <ContainerNumeros>
+                        <h1>{props.amount}</h1>
+                    </ContainerNumeros>
+                </QuantityContainer>
+
+            </Container>
+
+        </>
     );
 }
 

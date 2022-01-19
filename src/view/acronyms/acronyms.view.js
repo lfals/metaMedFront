@@ -1,17 +1,17 @@
 import react from 'react'
-import { AcronymsDashboard,AcronymsDashboardAdd, AdminDashboard, Container, DesktopMenu, Header, UserDashboard } from '../../components'
+import { AcronymsDashboard, AcronymsDashboardAdd, AdminDashboard, Container, DesktopMenu, Header, UserDashboard } from '../../components'
 
 const Acronyms = () => {
-    return(
+    return (
         <>
-        <DesktopMenu />
-        <Container>
-            <Header title="Siglas" amount="256"/>
-            <AcronymsDashboardAdd />
-            {/* <AdminDashboard title="Siglas" /> */}
-        </Container>
+            <DesktopMenu />
+            <Container>
+                <Header title="Siglas" amount="256" />
+                <AcronymsDashboardAdd title="Siglas" />
+                {/* <AdminDashboard title="Siglas" /> */}
+            </Container>
         </>
-       
+
     )
 }
 

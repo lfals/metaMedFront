@@ -6,7 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import { addToDatabase, getFromDatabase } from "../../../controller/api/api.controller.js";
 import { Form, TextField, Button, Stack } from '../style.js'
 
 
@@ -29,29 +29,43 @@ const style = {
 
 
 
-const UserEditModal = () => {
+const UserAddModal = () => {
 
-    const [status, setStatus] = useState('');
+    const [isActive, setIsActive] = useState('');
+
+    const [role, setRole] = useState('');
+
+    const handleChangeRole = (event) => {
+        setRole(event.target.value);
+    };
 
     const handleChangeStatus = (event) => {
-        setStatus(event.target.value);
+        setIsActive(event.target.value);
     };
 
-
-    const [role, setAge] = useState('');
-
+    const formRef = useRef()
 
 
-    const handleChange = (event) => {
-        setAge(event.target.value);
-    };
+    const handleFormSubmit = async (e) => {
+        e.preventDefault()
+        const { name, email, password, repassword } = e.target.elements
+        const data = {
+            name: name.value,
+            email: email.value,
+            password: password.value,
+            repassword: repassword.value,
+            role: role,
+            isActive: isActive
 
 
-    function handleSubmit(data) {
-        console.log(data)
+        }
 
+
+        console.log(data);
+        //addToDatabase("user", data)
+        //    const response = await getFromDatabase("user")
+        //    console.log(response);
     }
-
 
     return (
         <Box sx={style}>
@@ -61,55 +75,55 @@ const UserEditModal = () => {
 
 
 
-            <Form onSubmit={handleSubmit}>
+            <Form ref={formRef} onSubmit={handleFormSubmit}>
 
-                <TextField sx={{ mb: 2, mt: 4 }} label="Nome Completo" type="name" />
-                <TextField sx={{ mb: 2 }} label="Email" type="email" />
-                <TextField sx={{ mb: 2 }} label="Senha" type="password" />
-                <TextField sx={{ mb: 2 }} label="Senha" type="password" />
-
+                <TextField sx={{ mb: 2, mt: 4 }} error={false} id="name" label="Nome Completo" type="name" />
+                <TextField sx={{ mb: 2 }} error={false} id="email" label="Email" type="email" />
+                <TextField sx={{ mb: 2 }} error={false} id="password" label="Senha" type="password" />
+                <TextField sx={{ mb: 2 }} error={false} id="repassword" label="Senha" type="password" />
 
                 <FormControl>
-                    <InputLabel id="demo-simple-select-label">Tipo de Acesso</InputLabel>
+                    <InputLabel id="demo-simple-select-label" error={false} >Tipo de Acesso</InputLabel>
                     <Select
-                         sx={{mb:2}}
                         labelId="demo-simple-select-label"
-                        id="demo-simple-select"
+                        id="role"
                         value={role}
                         label="Tipo de Acesso"
-                        onChange={handleChange}
+                        onChange={handleChangeRole}
                     >
-                        <MenuItem value={"administrador"}>Administrador</MenuItem>
-                        <MenuItem value={"usuario"}>Usuário</MenuItem>
-
+                        <MenuItem name="administrator" id="administrator" value={"administrator"}>Administrador</MenuItem>
+                        <MenuItem name="user" id="user" value={"user"}>Usuário</MenuItem>
                     </Select>
-
-
                 </FormControl>
-                <FormControl>
-                    <InputLabel id="demo-simple-select-label">Status</InputLabel>
+
+
+                <FormControl sx={{ mt: 2 }}>
+                    <InputLabel id="demo-simple-select-label" error={false} >Status</InputLabel>
                     <Select
+
                         labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={status}
+                        id="isActive"
+                        value={isActive}
                         label="Status"
                         onChange={handleChangeStatus}
                     >
-                        <MenuItem value={"ativo"}>Ativo</MenuItem>
-                        <MenuItem value={"desativado"}>Desativado</MenuItem>
+                        <MenuItem name="active" id="active" value={true}>Ativo</MenuItem>
+                        <MenuItem name="inactive" id="inactive" value={false}>Desativado</MenuItem>
 
                     </Select>
                 </FormControl>
 
+
+
+                <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
+
+                    <Button variant="text">Cancelar</Button>
+                    <Button type="submit" variant="contained">Salvar</Button>
+
+                </Stack>
             </Form>
-            <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
-
-                <Button variant="text">Cancelar</Button>
-                <Button variant="contained">Salvar</Button>
-
-            </Stack>
         </Box>
     )
 }
 
-export default UserEditModal
+export default UserAddModal

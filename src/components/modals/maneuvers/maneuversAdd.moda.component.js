@@ -36,7 +36,7 @@ const style = {
 
 
 
-const ManeuversEditModal = () => {
+const ManeuversAddModal = () => {
 
     const [isActive, setIsActive] = useState('');
     const [image, setImage] = useState('');
@@ -49,36 +49,36 @@ const ManeuversEditModal = () => {
     };
 
     const handleImageChange = (e) => {
-            console.log(e);
-            let img = e.target.files[0];
-            let blobUrl = URL.createObjectURL(img)
-            console.log(blobUrl);
-            setImage(blobUrl)
+        console.log(e);
+        let img = e.target.files[0];
+        let blobUrl = URL.createObjectURL(img)
+        console.log(blobUrl);
+        setImage(blobUrl)
     };
 
 
     const handleFormSubmit = async (e) => {
         e.preventDefault()
-        const {name, description, aplicability, ifPositive, ifNegative, who } = e.target.elements
-        const data =  {
-            name: name.value, 
-            description: description.value, 
-            applicability: aplicability.value, 
-            ifPositive: ifPositive.value, 
-            ifNegative: ifNegative.value, 
-            whoCreated: who.value, 
+        const { name, description, aplicability, ifPositive, ifNegative, who } = e.target.elements
+        const data = {
+            name: name.value,
+            description: description.value,
+            applicability: aplicability.value,
+            ifPositive: ifPositive.value,
+            ifNegative: ifNegative.value,
+            whoCreated: who.value,
             image: image,
             isActive: isActive
-            
+
 
         }
-   
+
 
         console.log(data);
-            addToDatabase("maneuver", data)
+        //  addToDatabase("maneuver", data)
         //    const response = await getFromDatabase("user")
         //    console.log(response);
-      }
+    }
 
     return (
         <Box sx={style}>
@@ -91,19 +91,19 @@ const ManeuversEditModal = () => {
 
                 <Stack direction="column" alignItems="center" spacing={2}>
                     <label htmlFor="contained-button-file" style={styleInput}>
-                        <TextField accept="image/png,image/gif,image/jpeg" id="image" multiple type="file" name="file" onChange={handleImageChange}/>
+                        <TextField accept="image/png,image/gif,image/jpeg" id="image" multiple type="file" name="file" onChange={handleImageChange} />
                         <addImageButton variant="contained" component="span">
                             Adicionar Imagem
                         </addImageButton>
                     </label>
-                   
+
                 </Stack>
-                <TextField sx={{ mb: 2, mt: 4 }} id="name" label="Nome" v />
-                <TextField sx={{ mb: 2 }} id="description" label="Descrição" type="text" />
-                <TextField sx={{ mb: 2 }} id="aplicability" label="Aplicabilidade" type="text" />
-                <TextField sx={{ mb: 2 }} id="ifPositive" label="Se positivo" type="text" />
-                <TextField sx={{ mb: 2 }} id="ifNegative" label="Se negativo" type="text" />
-                <TextField sx={{ mb: 2 }} id="who" label="Quem foi que deu o nome a esta manobra?" type="text" />
+                <TextField sx={{ mb: 2, mt: 4 }} error={true} id="name" label="Nome" v />
+                <TextField sx={{ mb: 2 }} error={true} id="description" label="Descrição" type="text" />
+                <TextField sx={{ mb: 2 }} error={true} id="aplicability" label="Aplicabilidade" type="text" />
+                <TextField sx={{ mb: 2 }} error={true} id="ifPositive" label="Se positivo" type="text" />
+                <TextField sx={{ mb: 2 }} error={true} id="ifNegative" label="Se negativo" type="text" />
+                <TextField sx={{ mb: 2 }} error={true} id="who" label="Quem foi que deu o nome a esta manobra?" type="text" />
 
 
                 <FormControl id="isActive">
@@ -123,13 +123,13 @@ const ManeuversEditModal = () => {
 
                 <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
 
-                <Button variant="text" >Excluir</Button>
-                <Button variant="contained" type="submit">Salvar</Button>
+                    <Button variant="text" >Excluir</Button>
+                    <Button variant="contained" type="submit">Salvar</Button>
                 </Stack>
-         </Form>
-           
+            </Form>
+
         </Box>
     )
 }
 
-export default ManeuversEditModal
+export default ManeuversAddModal

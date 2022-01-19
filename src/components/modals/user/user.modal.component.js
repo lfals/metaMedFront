@@ -6,7 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import { addToDatabase, getFromDatabase } from "../../../controller/api/api.controller.js";
 import { Form, TextField, Button, Stack } from '../style.js'
 
 
@@ -30,58 +30,72 @@ const style = {
 
 
 const UserAddModal = () => {
-  const [role, setAge] = useState('');
+  const [role, setRole] = useState('');
 
- 
-  
-    const handleChange = (event) => {
-      setAge(event.target.value);
-    };
-  
+  const handleChangeRole = (event) => {
+    setRole(event.target.value);
+  };
 
-  function handleSubmit(data) {
-    console.log(data)
 
+
+  const formRef = useRef()
+
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault()
+    const { name, email, password } = e.target.elements
+    const data = {
+      name: name.value,
+      email: email.value,
+      password: password.value,
+      role: role
+
+
+    }
+
+
+    console.log(data);
+    //addToDatabase("user", data)
+    //    const response = await getFromDatabase("user")
+    //    console.log(response);
   }
-
 
   return (
     <Box sx={style}>
-      
+
       <h1 >Adicionar</h1>
-      
-        
 
-      
-      <Form  onSubmit={handleSubmit}>
 
-        <TextField sx={{mb:2, mt:4}} label="Nome Completo" type="name" />
-        <TextField sx={{mb:2}} label="Email" type="email" />
-        <TextField sx={{mb:2}} label="Senha"  type="password"  />
 
+
+      <Form ref={formRef} onSubmit={handleFormSubmit}>
+
+        <TextField sx={{ mb: 2, mt: 4 }} error={false} id="name" label="Nome Completo" type="name" />
+        <TextField sx={{ mb: 2 }} error={false} id="email" label="Email" type="email" />
+        <TextField sx={{ mb: 2 }} error={false} id="password" label="Senha" type="password" />
         <FormControl>
-          <InputLabel id="demo-simple-select-label">Tipo de Acesso</InputLabel>
+          <InputLabel id="demo-simple-select-label" error={false} >Tipo de Acesso</InputLabel>
           <Select
             labelId="demo-simple-select-label"
-            id="demo-simple-select"
+            id="role"
             value={role}
             label="Tipo de Acesso"
-            onChange={handleChange}
+            onChange={handleChangeRole}
           >
-            <MenuItem value={"administrador"}>Administrador</MenuItem>
-            <MenuItem value={"usuario"}>Usuário</MenuItem>
-          
+            <MenuItem name="administrator" id="administrator" value={"administrator"}>Administrador</MenuItem>
+            <MenuItem name="user" id="user" value={"user"}>Usuário</MenuItem>
           </Select>
         </FormControl>
 
-       
-      </Form>
-      <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
 
-        <Button variant="text">Cancelar</Button>
-        <Button variant="contained">Adicionar</Button>
-       
-      </Stack>
+
+        <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
+
+          <Button variant="text">Cancelar</Button>
+          <Button type="submit" variant="contained">Adicionar</Button>
+
+        </Stack>
+      </Form>
     </Box>
   )
 }

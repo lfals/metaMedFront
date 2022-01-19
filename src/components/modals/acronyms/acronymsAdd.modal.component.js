@@ -6,7 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import { addToDatabase, getFromDatabase } from "../../../controller/api/api.controller.js";
 import { Form, TextField, Button, Stack } from '../style.js'
 
 
@@ -32,74 +32,89 @@ const style = {
 const AcronymsAddModal = () => {
   const [language, setLanguage] = useState('');
 
-  const handleChange = (event) => {
+  const [isActive, setIsActive] = useState('');
+
+  const formRef = useRef()
+
+  const handleChangeStatus = (event) => {
+    setIsActive(event.target.value);
+  };
+
+  const handleChangeLanguage = (event) => {
     setLanguage(event.target.value);
   };
 
-  const [status, setStatus] = useState('');
 
-  const handleChangeStatus = (event) => {
-        setStatus(event.target.value);
-  };
-  
 
-  function handleSubmit(data) {
-    console.log(data)
+  const handleFormSubmit = async (e) => {
+    e.preventDefault()
+    const { name, description } = e.target.elements
+    const data = {
+      name: name.value,
+      description: description.value,
+      language: language.value,
+      isActive: isActive
 
+
+    }
+
+
+    console.log(data);
+    //addToDatabase("maneuver", data)
+    //    const response = await getFromDatabase("user")
+    //    console.log(response);
   }
 
 
   return (
     <Box sx={style}>
-      
+
       <h1 >Adicionar</h1>
-      
-        
 
-      
-      <Form  onSubmit={handleSubmit}>
 
-        <TextField sx={{mb:2, mt:4}} label="Nome" type="text" />
-        <FormControl>
+
+
+      <Form ref={formRef} onSubmit={handleFormSubmit}>
+        <TextField sx={{ mb: 2, mt: 4 }} error={false} id="name" label="Nome" type="text" />
+        <FormControl id="language">
           <InputLabel id="demo-simple-select-label">Idioma</InputLabel>
-          <Select 
-            sx={{mb:2}} 
+          <Select
+            error={false}
+            sx={{ mb: 2 }}
             labelId="demo-simple-select-label"
-            id="demo-simple-select"
+            id="language"
             value={language}
             label="Idioma"
-            onChange={handleChange}
+            onChange={handleChangeLanguage}
           >
             <MenuItem value={"pt"}>Portugues</MenuItem>
             <MenuItem value={"en"}>Inglês</MenuItem>
-          
+
           </Select>
         </FormControl>
-        <TextField sx={{mb:2}}  label="Descrição"  type="text"  />
+        <TextField sx={{ mb: 2 }} error={false} id="description" label="Descrição" type="text" />
 
-        <FormControl>
+        <FormControl id="isActive">
           <InputLabel id="demo-simple-select-label">Status</InputLabel>
           <Select
+            error={false}
             labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={status}
+            id="isActive"
+            value={isActive}
             label="Status"
             onChange={handleChangeStatus}
           >
-              <MenuItem value={"ativo"}>Ativo</MenuItem>
+            <MenuItem value={"ativo"}>Ativo</MenuItem>
             <MenuItem value={"desativado"}>Desativado</MenuItem>
-          
           </Select>
         </FormControl>
 
-       
-      </Form>
-      <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
+        <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
+          <Button variant="text">Cancelar</Button>
+          <Button variant="contained" type="submit">Salvar</Button>
+        </Stack>
 
-        <Button variant="text">Cancelar</Button>
-        <Button variant="contained">Salvar</Button>
-       
-      </Stack>
+      </Form>
     </Box>
   )
 }

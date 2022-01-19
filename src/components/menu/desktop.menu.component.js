@@ -1,6 +1,6 @@
-import { Divider, List,  Tooltip,ListItemIcon, MenuItem  } from "@material-ui/core";
+import { Divider, List, Tooltip, ListItemIcon, MenuItem } from "@material-ui/core";
 import React from "react";
-import {pages} from "../../controller/pages";
+import { pages } from "../../controller/pages";
 import { Box, Link, ListItemText, MenuContainer, ProfileHolder, ProfileTextHolder, Avatar, Menu, PopupMenuText, CompanyLogo } from "./style";
 import { FiSettings } from 'react-icons/fi'
 import { Logout, Settings } from "@mui/icons-material";
@@ -23,33 +23,33 @@ const DesktopMenu = () => {
     setAnchorEl(null);
   };
 
-    return(
+  return (
 
-      <MenuContainer>
-        <Box>
-          <List>
-          <CompanyLogo>MetaMedi</CompanyLogo>
-            {pages.map(page => {
-              if(page.access.indexOf(user.role) > -1){
-                return(
-                  <Link key={page.name} to={page.route}>
-                    <ListItemText primary={page.name} />
-                  </Link>
-                 )
-              }
-            })}
-            
-          </List>
-        </Box>
-        <Tooltip title="Configuração de Conta">
+    <MenuContainer>
+      <Box>
+        <List>
+          <CompanyLogo>MetaMed</CompanyLogo>
+          {pages.map(page => {
+            if (page.access.indexOf(user.role) > -1) {
+              return (
+                <Link key={page.name} to={page.route}>
+                  <ListItemText primary={page.name} />
+                </Link>
+              )
+            }
+          })}
+
+        </List>
+      </Box>
+      <Tooltip title="Configuração de Conta">
         <ProfileHolder onClick={handleProfileOpen}>
           <ProfileTextHolder >
             <h1>Luis Amorim</h1>
-              <FiSettings />
+            <FiSettings />
           </ProfileTextHolder>
         </ProfileHolder>
-        </Tooltip>
-        <Menu
+      </Tooltip>
+      <Menu
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -73,10 +73,10 @@ const DesktopMenu = () => {
           Logout
         </MenuItem>
       </Menu>
-      </MenuContainer>
-      
-    
-    )
+    </MenuContainer>
+
+
+  )
 }
 
 export default DesktopMenu
