@@ -98,7 +98,7 @@ const ManeuversEditModal = () => {
           </label>
 
         </Stack>
-        <TextField sx={{ mb: 2, mt: 4 }} error={false} id="name" label="Nome" v />
+        <TextField sx={{ mb: 2, mt: 4 }} error={false} id="name" label="Nome" type="text" />
         <TextField sx={{ mb: 2 }} error={true} id="description" label="Descrição" type="text" />
         <TextField sx={{ mb: 2 }} error={false} id="aplicability" label="Aplicabilidade" type="text" />
         <TextField sx={{ mb: 2 }} error={false} id="ifPositive" label="Se positivo" type="text" />
