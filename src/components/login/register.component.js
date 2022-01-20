@@ -14,8 +14,9 @@ const Register = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault()
-        const { email, password, passwordConfirm } = await e.target.elements
+        const { name, email, password, passwordConfirm } = await e.target.elements
         const data = {
+            name: name.value,
             email: email.value,
             password: password.value,
             passwordConfirm: passwordConfirm.value
@@ -42,8 +43,8 @@ const Register = () => {
                             <p>ou</p>
                         </Divider>
                         <TextField fullWidth id="name" label="Nome Completo" variant="outlined" margin="normal" />
-                        <TextField fullWidth id="email" label="Email" variant="outlined" margin="normal" />
-                        <TextField fullWidth id="password" label="Senha" type="password" variant="outlined" margin="normal" />
+                        <TextField fullWidth id="email" label="Email" variant="outlined" type="email" margin="normal" />
+                        <TextField fullWidth id="password" label="Senha" variant="outlined" type="password" margin="normal" />
                         <TextField fullWidth id="passwordConfirm" label="Confirmação de senha" type="password" variant="outlined" margin="normal" />
                         <FormGroup fullWidth>
                             <FormControlLabel control={<Checkbox defaultChecked color="primary" />} label="Concordo com os Termos e Condições" />
