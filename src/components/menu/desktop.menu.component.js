@@ -1,9 +1,11 @@
-import { Divider, List, Tooltip, ListItemIcon, MenuItem } from "@material-ui/core";
-import React from "react";
+import { Divider, Modal, Fade, List, Tooltip, ListItemIcon, MenuItem } from "@material-ui/core";
+import react, { useState } from 'react'
 import { pages } from "../../controller/pages";
 import { Box, Link, ListItemText, MenuContainer, ProfileHolder, ProfileTextHolder, Avatar, Menu, PopupMenuText, CompanyLogo } from "./style";
 import { FiSettings } from 'react-icons/fi'
 import { Logout, Settings } from "@mui/icons-material";
+import ProfileEdit from "../modals/profileConfig/profileEdit.modal.component"
+
 
 const user = {
   "role": "administrator"
@@ -12,7 +14,11 @@ const user = {
 
 const DesktopMenu = () => {
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => setOpenModal(true);
+  const handleCloseModal = () => setOpenModal(false);
+
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
   const handleProfileOpen = (event) => {
@@ -63,8 +69,9 @@ const DesktopMenu = () => {
         <MenuItem>
           <ListItemIcon>
             <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
+          </ListItemIcon >
+
+          <p onClick={() => setOpenModal(true)} >Settings</p>
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
@@ -73,6 +80,16 @@ const DesktopMenu = () => {
           Logout
         </MenuItem>
       </Menu>
+      <Modal
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Fade in={openModal}>
+          <ProfileEdit />
+        </Fade>
+      </Modal>
     </MenuContainer>
 
 

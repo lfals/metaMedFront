@@ -60,7 +60,7 @@ const AcronymsAddModal = () => {
 
 
     console.log(data);
-    //addToDatabase("maneuver", data)
+    addToDatabase("acronyms", data)
     //    const response = await getFromDatabase("user")
     //    console.log(response);
   }

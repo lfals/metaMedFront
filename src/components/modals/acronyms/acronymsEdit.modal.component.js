@@ -1,4 +1,4 @@
-import { Box } from "@material-ui/core";
+import { Box, Modal, Fade } from "@material-ui/core";
 import React, { useEffect, useRef, useState } from 'react'
 import { useField } from '@unform/core'
 import { Header, Input } from "../../index"
@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { addToDatabase, getFromDatabase } from "../../../controller/api/api.controller.js";
 import { Form, TextField, Button, Stack } from '../style.js'
-
+import { ConfirmationModal } from "../../index"
 
 
 
@@ -29,7 +29,14 @@ const style = {
 
 
 
-const AcronymsEditModal = () => {
+const AcronymsEditModal = (props) => {
+
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
   const [language, setLanguage] = useState('');
 
   const [isActive, setIsActive] = useState('');
@@ -110,11 +117,20 @@ const AcronymsEditModal = () => {
         </FormControl>
 
         <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
-          <Button variant="text">Cancelar</Button>
-          <Button variant="contained" type="submit">Salvar</Button>
+          <Button variant="text" color="error" onClick={handleOpen}>Excluir</Button>
+          <Button variant="contained" type="submit" onClick={props.close}>Salvar</Button>
         </Stack>
 
       </Form>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <ConfirmationModal id="" title="felpsmodal" close={handleClose} />
+      </Modal>
     </Box>
   )
 }

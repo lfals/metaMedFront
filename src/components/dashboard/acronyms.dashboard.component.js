@@ -69,9 +69,8 @@ const AcronymsDashboard = (props) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Fade in={open}>
-          <AcronymsEditModal />
-        </Fade>
+
+        <AcronymsEditModal close={handleClose} />
       </Modal>
     </>
   )

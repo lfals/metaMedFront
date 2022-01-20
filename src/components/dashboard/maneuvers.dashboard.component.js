@@ -69,9 +69,9 @@ const ManeuversDashboard = (props) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Fade in={open}>
-          <ManeuversEditModal />
-        </Fade>
+
+        <ManeuversEditModal close={handleClose} />
+
       </Modal>
     </>
   )

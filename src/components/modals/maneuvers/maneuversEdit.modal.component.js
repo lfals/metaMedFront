@@ -1,9 +1,10 @@
-import { Box } from "@material-ui/core";
+import { Box, Modal } from "@material-ui/core";
 import React, { useEffect, useRef, useState } from 'react'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { ConfirmationModal } from "../../index"
 
 
 import { Form, TextField, Button, Stack } from '../style.js'
@@ -36,7 +37,13 @@ const style = {
 
 
 
-const ManeuversEditModal = () => {
+const ManeuversEditModal = (props) => {
+
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
 
   const [isActive, setIsActive] = useState('');
   const [image, setImage] = useState('');
@@ -124,11 +131,19 @@ const ManeuversEditModal = () => {
 
         <Stack direction="row" sx={{ alignItems: 'flex-end' }} spacing={2}>
 
-          <Button variant="text" >Excluir</Button>
-          <Button variant="contained" type="submit">Salvar</Button>
+          <Button variant="text" color="error" onClick={handleOpen}>Excluir</Button>
+          <Button variant="contained" type="submit" onClick={props.close}>Salvar</Button>
         </Stack>
       </Form>
 
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <ConfirmationModal id="" title="mauneverEdit" close={handleClose} />
+      </Modal>
     </Box>
   )
 }
