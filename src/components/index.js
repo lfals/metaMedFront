@@ -14,10 +14,10 @@ import UserAddModal from "./modals/user/user.modal.component"
 import UserEditModal from "./modals/user/userEdit.modal.component"
 import AcronymsEditModal from "./modals/acronyms/acronymsEdit.modal.component"
 import AcronymsAddModal from './modals/acronyms/acronymsAdd.modal.component'
-import ManeuversAddModal from './modals/maneuvers/maneuversAdd.moda.component'
+import ManeuversAddModal from './modals/maneuvers/maneuversAdd.modal.component'
 import Login from "./login/login.component"
 import Register from "./login/register.component"
+import ProfileEdit from "./modals/profileConfig/profileEdit.modal.component"
+import ConfirmationModal from "./modals/confirmationDelete/confirmation.modal.component"
 
-
-
-export { Header, AcronymsDashboardAdd, ManeuversDashboardAdd, ManeuversEditModal, DesktopMenu, MobileMenu, ManeuversAddModal, AdminDashboard, Container, AcronymsEditModal, AcronymsAddModal, UserAddModal, UserEditModal, Register, Login, UserDashboardAdd, UserDashboard, ManeuversDashboard, AcronymsDashboard }
+export { ConfirmationModal, Header, AcronymsDashboardAdd, ManeuversDashboardAdd, ManeuversEditModal, ProfileEdit, DesktopMenu, MobileMenu, ManeuversAddModal, AdminDashboard, Container, AcronymsEditModal, AcronymsAddModal, UserAddModal, UserEditModal, Register, Login, UserDashboardAdd, UserDashboard, ManeuversDashboard, AcronymsDashboard }

@@ -48,10 +48,11 @@ const AcronymsAddModal = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault()
-    const { name, description } = e.target.elements
+    const { name, description, translation } = e.target.elements
     const data = {
       name: name.value,
       description: description.value,
+      translation: translation.value,
       language: language.value,
       isActive: isActive
 
@@ -60,7 +61,7 @@ const AcronymsAddModal = () => {
 
 
     console.log(data);
-    //addToDatabase("maneuver", data)
+    addToDatabase("acronyms", data)
     //    const response = await getFromDatabase("user")
     //    console.log(response);
   }
@@ -93,6 +94,8 @@ const AcronymsAddModal = () => {
           </Select>
         </FormControl>
         <TextField sx={{ mb: 2 }} error={false} id="description" label="Descrição" type="text" />
+        <TextField sx={{ mb: 2 }} error={false} id="translation" label="Tradução" type="text" />
+
 
         <FormControl id="isActive">
           <InputLabel id="demo-simple-select-label">Status</InputLabel>

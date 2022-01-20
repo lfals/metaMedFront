@@ -75,7 +75,7 @@ const ManeuversAddModal = () => {
 
 
         console.log(data);
-        //  addToDatabase("maneuver", data)
+        addToDatabase("maneuver", data)
         //    const response = await getFromDatabase("user")
         //    console.log(response);
     }
@@ -98,12 +98,12 @@ const ManeuversAddModal = () => {
                     </label>
 
                 </Stack>
-                <TextField sx={{ mb: 2, mt: 4 }} error={true} id="name" label="Nome" v />
-                <TextField sx={{ mb: 2 }} error={true} id="description" label="Descrição" type="text" />
-                <TextField sx={{ mb: 2 }} error={true} id="aplicability" label="Aplicabilidade" type="text" />
-                <TextField sx={{ mb: 2 }} error={true} id="ifPositive" label="Se positivo" type="text" />
-                <TextField sx={{ mb: 2 }} error={true} id="ifNegative" label="Se negativo" type="text" />
-                <TextField sx={{ mb: 2 }} error={true} id="who" label="Quem foi que deu o nome a esta manobra?" type="text" />
+                <TextField sx={{ mb: 2, mt: 4 }} error={false} id="name" label="Nome" v />
+                <TextField sx={{ mb: 2 }} error={false} id="description" label="Descrição" type="text" />
+                <TextField sx={{ mb: 2 }} error={false} id="aplicability" label="Aplicabilidade" type="text" />
+                <TextField sx={{ mb: 2 }} error={false} id="ifPositive" label="Se positivo" type="text" />
+                <TextField sx={{ mb: 2 }} error={false} id="ifNegative" label="Se negativo" type="text" />
+                <TextField sx={{ mb: 2 }} error={false} id="who" label="Quem foi que deu o nome a esta manobra?" type="text" />
 
 
                 <FormControl id="isActive">

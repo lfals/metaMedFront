@@ -69,9 +69,9 @@ const AdminDashboard = (props) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Fade in={open}>
-          <UserEditModal />
-        </Fade>
+
+        <UserEditModal close={handleClose} />
+
       </Modal>
     </>
   )
