@@ -66,12 +66,12 @@ const DesktopMenu = () => {
           <p>Administrador</p>
         </PopupMenuText>
         <Divider />
-        <MenuItem>
+        <MenuItem onClick={() => setOpenModal(true)}>
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon >
 
-          <p onClick={() => setOpenModal(true)} >Settings</p>
+          <p  >Settings</p>
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
@@ -86,9 +86,9 @@ const DesktopMenu = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Fade in={openModal}>
-          <ProfileEdit />
-        </Fade>
+
+        <ProfileEdit close={handleCloseModal} />
+
       </Modal>
     </MenuContainer>
 

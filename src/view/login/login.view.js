@@ -7,7 +7,7 @@ const LoginUser = () => {
 
   return (
     <>
-      <Register />
+      <Login />
 
     </>
   )

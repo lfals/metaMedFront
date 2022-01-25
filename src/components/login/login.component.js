@@ -4,6 +4,7 @@ import { Container, FormGroup, Box, Checkbox, ButtonGoogle, ButtonLogin } from "
 import { FcGoogle } from 'react-icons/fc';
 import Divider from '@mui/material/Divider';
 import { Form } from '../modals/style.js'
+import { getFromDatabase, postToDatabase } from '../../controller/api/api.controller';
 
 
 
@@ -24,9 +25,12 @@ const Login = () => {
         }
 
         console.log(data);
-        //addToDatabase("maneuver", data)
-        //    const response = await getFromDatabase("user")
-        //    console.log(response);
+        const token = await postToDatabase("auth/login", data).then(user => {
+            return user.data.access_token
+        })
+
+        localStorage.setItem("userId", token);
+
     }
     return (
         <>

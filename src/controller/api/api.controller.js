@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const apiurl = "http://localhost:3000"
+const apiurl = "https://meta-med-lfals.vercel.app"
 
 export const addToDatabase = (route, data) => {
 
@@ -22,4 +22,15 @@ export const getFromDatabase = (route) => {
     })
 
 
+}
+
+export const postToDatabase = (route, data) => {
+
+  return axios.post(`${apiurl}/${route}`, data)
+    .then(function (response) {
+      return response
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
