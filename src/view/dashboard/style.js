@@ -4,12 +4,13 @@ import { Container as CContainer } from "../../components"
 
 export const Container = styled(CContainer)`
     flex-direction: row ;
-    
 `
 
-export const Paper = styled.div `
+export const Paper = styled.div`
 
-    background: linear-gradient(252.25deg, #F8A6FF 1.77%, rgba(0, 71, 179, 0) 100%);
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #0047B2 10%, #F8A6FF 100%);
+
     flex-wrap: wrap;
     min-width: 105px;
     width: 100%;
@@ -20,7 +21,7 @@ export const Paper = styled.div `
     
 `
 
-export const CardTitle = styled.h2 `
+export const CardTitle = styled.h2`
     color: #fff;
     font-size: 24px;
 
@@ -28,7 +29,7 @@ export const CardTitle = styled.h2 `
 `
 
 
-export const CardContent = styled.h1 `
+export const CardContent = styled.h1`
     color: #fff;
     font-size: 36px;
     

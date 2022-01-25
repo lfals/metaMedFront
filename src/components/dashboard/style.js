@@ -1,5 +1,5 @@
-import styled  from "styled-components";
-import { TableCell as MuiTableCell,TableRow as MuiTableRow, TableContainer as MuiTableContainer, Card as MuiCard, Button as MuiButton } from '@material-ui/core';
+import styled from "styled-components";
+import { TableCell as MuiTableCell, TableRow as MuiTableRow, TableContainer as MuiTableContainer, Card as MuiCard, Button as MuiButton } from '@material-ui/core';
 
 export const TableContainer = styled(MuiTableContainer)`
     width: 200px;
@@ -34,7 +34,10 @@ export const TableRow = styled(MuiTableRow)`
 
 
 export const TextContainer = styled.div`
-
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: start;
 `
 
 export const ImageContainer = styled.div`
@@ -55,8 +58,8 @@ export const ImageContainer = styled.div`
 export const Card = styled(MuiCard)`
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: left;
     padding: 12px 24px;
     min-height: 150px;
     margin-bottom: 12px;

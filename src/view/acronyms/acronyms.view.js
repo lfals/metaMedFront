@@ -1,5 +1,5 @@
 import react from 'react'
-import { AcronymsDashboard, AcronymsDashboardAdd, AdminDashboard, Container, DesktopMenu, Header, UserDashboard } from '../../components'
+import { AcronymsDashboard, UserAcronymsDashboard, AcronymsDashboardAdd, AdminDashboard, Container, DesktopMenu, Header, UserDashboard } from '../../components'
 
 const Acronyms = () => {
     return (
@@ -7,7 +7,7 @@ const Acronyms = () => {
             <DesktopMenu />
             <Container>
                 <Header title="Siglas" amount="256" />
-                <AcronymsDashboardAdd title="Siglas" />
+                <UserAcronymsDashboard title="Siglas" />
                 {/* <AdminDashboard title="Siglas" /> */}
             </Container>
         </>

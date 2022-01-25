@@ -4,6 +4,7 @@ import { Container, FormGroup, Box, Checkbox, ButtonGoogle, ButtonLogin } from "
 import { FcGoogle } from 'react-icons/fc';
 import { Form } from '../modals/style.js'
 import Divider from '@mui/material/Divider';
+import { addToDatabase } from '../../controller/api/api.controller';
 
 
 
@@ -14,19 +15,19 @@ const Register = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault()
-        const { name, email, password, passwordConfirm } = await e.target.elements
+        const { name, email, password } = await e.target.elements
         const data = {
             name: name.value,
             email: email.value,
             password: password.value,
-            passwordConfirm: passwordConfirm.value
+
 
         }
 
         console.log(data);
-        //addToDatabase("maneuver", data)
-        //    const response = await getFromDatabase("user")
-        //    console.log(response);
+        addToDatabase("users", data)
+
+
     }
     return (
         <>
