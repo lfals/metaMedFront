@@ -1,6 +1,6 @@
-import Header from "./header/header.component"
 import DesktopMenu from './menu/desktop.menu.component'
 import MobileMenu from './menu/mobile.menu.component'
+import Header from "./navbar/header.component"
 import AdminDashboard from './dashboard/admin.dashboard.component'
 import UserDashboard from './dashboard/user.acronymsDashboard.component'
 import UserDashboardAdd from './dashboard/user.dashboardAdd.component'
