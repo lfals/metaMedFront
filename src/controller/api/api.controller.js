@@ -34,3 +34,16 @@ export const postToDatabase = (route, data) => {
       console.log(error);
     });
 }
+
+export const getUsers = (token, id) => {
+  console.log(token, id);
+  const config = {
+    headers: { Authorization: `${token}` }
+}
+  const body = id
+    axios.get(`${apiurl}/users`, { userId: id},  { headers: {"Authorization" : `Bearer ${token}`} }).then(response => {
+      console.log(response);
+    }).catch(console.log)
+
+
+}
