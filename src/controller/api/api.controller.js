@@ -45,5 +45,4 @@ export const getUsers = (token, id) => {
       console.log(response);
     }).catch(console.log)
 
-
 }
