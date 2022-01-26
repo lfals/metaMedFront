@@ -5,6 +5,7 @@ import { Box, Link, ListItemText, MenuContainer, ProfileHolder, ProfileTextHolde
 import { FiSettings } from 'react-icons/fi'
 import { Logout, Settings } from "@mui/icons-material";
 import ProfileEdit from "../modals/profileConfig/profileEdit.modal.component"
+import { logout } from "../../helper/auth";
 
 
 const user = {
@@ -28,6 +29,11 @@ const DesktopMenu = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleLogOut = () => {
+    logout()
+    window.location.href = '/'
+  }
 
   return (
 
@@ -73,7 +79,7 @@ const DesktopMenu = () => {
 
           <p  >Settings</p>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={() => handleLogOut()}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

@@ -24,9 +24,8 @@ const Register = () => {
 
         }
 
-        console.log(data);
         addToDatabase("users", data)
-
+        window.location.href = '/'
 
     }
     return (
