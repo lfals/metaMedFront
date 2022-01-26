@@ -1,12 +1,6 @@
 import { Box, Modal } from "@material-ui/core";
-import React, { useEffect, useRef, useState } from 'react'
-import { useField } from '@unform/core'
-import { Header, Input } from "../../index"
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { addToDatabase, getFromDatabase } from "../../../controller/api/api.controller.js";
+import React, {  useRef, useState } from 'react'
+
 import { Form, TextField, Button, Stack } from '../style.js'
 import { ConfirmationModal } from "../../index"
 

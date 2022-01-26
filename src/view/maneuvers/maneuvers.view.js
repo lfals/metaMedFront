@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ManeuversDashboard, ManeuversDashboardAdd, Header, Container, DesktopMenu } from "../../components";
+import { ManeuversDashboard, Header, Container, DesktopMenu } from "../../components";
 
 const Maneuvers = () => {
         return (
