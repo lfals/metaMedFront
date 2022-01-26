@@ -1,5 +1,4 @@
-import { Box, Modal } from "@material-ui/core";
-import React, { useState } from "react";
+import React from "react";
 import UserViewContent from "./user.viewContent.component";
 
 
